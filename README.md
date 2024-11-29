@@ -7,3 +7,4 @@ Parts
 2. Heart rate estimation 
 3. Loudness segmentation 
 
+#hi bro's
