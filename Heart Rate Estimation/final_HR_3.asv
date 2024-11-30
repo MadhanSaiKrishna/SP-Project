@@ -23,7 +23,6 @@ HR_time = time1(locs(2:end));
 figure;
 subplot(2,1,1);
 % plot(time1,E1);
-plot(fftshift(abs(fft(E1))))
 % hold on;
 % plot(time2,ECG_ma);
 % hold off;
