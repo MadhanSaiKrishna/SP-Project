@@ -5,7 +5,6 @@ time = (0:length(E1)-1) / fs; % Time vector
 
 % Step 1: Detect R-peaks
 [~, locs_R] = findpeaks(E1, 'MinPeakHeight', 0.5, 'MinPeakDistance', 0.6 * fs);
-% Adjust 'MinPeakHeight' and 'MinPeakDistance' based on the signal characteristics
 
 % Step 2: Calculate RR intervals and HR
 RR_intervals = diff(locs_R) / fs; % Time differences between R-peaks in seconds
