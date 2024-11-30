@@ -6,86 +6,99 @@ Lb1 = length(b1);
 Lb2 = length(b2);
 Lb3 = length(b3);
 
+fft_b1 = fftshift(fft(b1));
+fft_b2 = fftshift(fft(b2));
+fft_b3 = fftshift(fft(b3));
+
 [f1,fs_f1] = audioread("Task\F1.wav");
-Lf1 = length(f1);
-
 [f2,fs_f2] = audioread("Task\F2.wav");
-Lf2 = length(f2);
-
 [f3,fs_f3] = audioread("Task\F3.wav");
-Lf3 = length(f3);
-
 [f4,fs_f4] = audioread("Task\F4.wav");
-Lf4 = length(f4);
-
 [f5,fs_f5] = audioread("Task\F5.wav");
-Lf5 = length(f5);
-
 [f6,fs_f6] = audioread("Task\F6.wav");
-Lf6 = length(f6);
-
 [f7,fs_f7] = audioread("Task\F7.wav");
-Lf7 = length(f7);
-
 [f8,fs_f8] = audioread("Task\F8.wav");
+
+
+Lf1 = length(f1);
+Lf2 = length(f2);
+Lf3 = length(f3);
+Lf4 = length(f4);
+Lf5 = length(f5);
+Lf6 = length(f6);
+Lf7 = length(f7);
 Lf8 = length(f8);
 
+fft_f1 = fftshift(fft(f1));
+fft_f2 = fftshift(fft(f2));
+fft_f3 = fftshift(fft(f3));
+fft_f4 = fftshift(fft(f4));
+fft_f5 = fftshift(fft(f5));
+fft_f6 = fftshift(fft(f6));
+fft_f7 = fftshift(fft(f7));
+fft_f8 = fftshift(fft(f8));
+
 % figure;
-% plot(fs_b1*(-Lb1/2:Lb1/2 - 1)/Lb1,abs(fftshift(fft(b1))))
+% plot(fs_b1*(-Lb1/2:Lb1/2 - 1)/Lb1,abs(fft_b1))
 % title('Bird 1')
+% grid on;
+
+% figure;
+% plot(fs_b2*(-Lb2/2:Lb2/2 - 1)/Lb2,abs(fft_b2))
+% title('Bird 2')
 % grid on;
 % 
 % figure;
-% plot(fs_b2*(-Lb2/2:Lb2/2 - 1)/Lb2,abs(fftshift(fft(b2))))
-% title('Bird 2')
-% grid on;
-
-% figure;
-% plot(fs_b3*(-Lb3/2:Lb3/2 - 1)/Lb3,abs(fftshift(fft(b3))))
+% plot(fs_b3*(-Lb3/2:Lb3/2 - 1)/Lb3,abs(fft_b3))
 % title('Bird 3')
 % grid on;
+% 
+% figure;
+% plot(fs_f1*(-Lf1/2:Lf1/2-1)/Lf1,abs(fft_f1))
+% title('File 1')
+% grid on;
+% 
+% figure;
+% plot(fs_f2*(-Lf2/2:Lf2/2-1)/Lf2,abs(fft_f2))
+% title('File 2')
+% grid on;
+% 
+% figure;
+% plot(fs_f3*(-Lf3/2:Lf3/2-1)/Lf3,abs(fft_f3))
+% title('File 3')
+% grid on;
+% 
+% figure;
+% plot(fs_f4*(-Lf4/2:Lf4/2-1)/Lf4,abs(fft_f4))
+% title('File 4')
+% grid on;
+% 
+% figure;
+% plot(fs_f5*(-Lf5/2:Lf5/2-1)/Lf5,abs(fft_f5))
+% title('File 5')
+% grid on;
+% 
+% figure;
+% plot(fs_f6*(-Lf6/2:Lf6/2-1)/Lf6,abs(fft_f6))
+% title('File 6')
+% grid on;
+% 
+% figure;
+% plot(fs_f7*(-Lf7/2:Lf7/2-1)/Lf7,abs(fft_f7))
+% title('File 7')
+% grid on;
+% 
+% figure;
+% plot(fs_f8*(-Lf8/2:Lf8/2-1)/Lf8,abs(fft_f8))
+% title('File 8')
+% grid on;
 
-figure;
-plot(fs_f1*(-Lf1/2:Lf1/2-1)/Lf1,abs(fftshift(fft(f1))))
-title('File 1')
-grid on;
+f1b1 = xcorr(abs(fft_f2),abs(fft_b2),0,'coeff');
+f1b2 = xcorr(abs(fft_f1),abs(fft_b2),0,'coeff');
+f1b3 = xcorr(abs(fft_f1),abs(fft_b3),0,'coeff');
 
-figure;
-plot(fs_f2*(-Lf2/2:Lf2/2-1)/Lf2,abs(fftshift(fft(f2))))
-title('File 2')
-grid on;
+disp(['F1 and B1 ',num2str(f1b1)]);
+disp(['F1 and B2 ',num2str(f1b2)]);
+disp(['F1 and B3 ',num2str(f1b3)]);
 
-figure;
-plot(fs_f3*(-Lf3/2:Lf3/2-1)/Lf3,abs(fftshift(fft(f3))))
-title('File 3')
-grid on;
 
-figure;
-plot(fs_f4*(-Lf4/2:Lf4/2-1)/Lf4,abs(fftshift(fft(f4))))
-title('File 4')
-grid on;
-
-figure;
-plot(fs_f4*(-Lf4/2:Lf4/2-1)/Lf4,abs(fftshift(fft(f4))))
-title('File 4')
-grid on;
-
-figure;
-plot(fs_f5*(-Lf5/2:Lf5/2-1)/Lf5,abs(fftshift(fft(f5))))
-title('File 5')
-grid on;
-
-figure;
-plot(fs_f6*(-Lf6/2:Lf6/2-1)/Lf6,abs(fftshift(fft(f6))))
-title('File 6')
-grid on;
-
-figure;
-plot(fs_f7*(-Lf7/2:Lf7/2-1)/Lf7,abs(fftshift(fft(f7))))
-title('File 7')
-grid on;
-
-figure;
-plot(fs_f8*(-Lf8/2:Lf8/2-1)/Lf8,abs(fftshift(fft(f9))))
-title('File 3')
-grid on;
