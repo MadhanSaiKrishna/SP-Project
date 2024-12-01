@@ -82,3 +82,17 @@ plot(time2, ECG_ma);
 title("ECG Moving Average with Peaks");
 ylabel("Smoothed Squared Derivative");
 xlabel("Time (s)");
+
+
+figure;
+subplot(2,1,1);
+plot(time1,E2);
+title("original");
+ylabel("Amplitude");
+xlabel("Time (s)");
+
+subplot(2,1,2);
+plot(HR);
+title("heart rate");
+ylabel("HR");
+xlabel("Time (s)");
