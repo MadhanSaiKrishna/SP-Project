@@ -1,8 +1,5 @@
 [a1,fs_a1] = audioread("audios\1.wav");
-[a3,fs_a3] = audioread("audios\3.wav");
-
 La1 = length(a1);
-La3 = length(a3);
 
 a1_wow = a1(20950:48209);
 a1_i = a1(48350:57180);

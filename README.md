@@ -1,7 +1,6 @@
 
 ## Signal Processing Project (Monsoon 2024) 
 
-
 ### Bird recognition  
 * **Introduction** :    Bird sounds can allow us to uniquely identify the bird species. Their time and frequency 
 characteristics can be studied and used for bird recognition.
