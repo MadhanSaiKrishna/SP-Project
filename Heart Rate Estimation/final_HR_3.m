@@ -59,3 +59,6 @@ if ~isempty(HR)
 else
     disp('Not enough peaks detected to compute HR.');
 end
+
+figure;
+plot(fftshift(abs(fft(E1))));
