@@ -1,3 +1,4 @@
+close all;
 load('E1.mat'); 
 fs = 128;
 % E1 = E1(5000:5500);
