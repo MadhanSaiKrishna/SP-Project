@@ -74,12 +74,6 @@ for i = 1:8
     disp(['File F' num2str(i) ' matches with Bird ' num2str(best_bird_index) ' with correlation ' num2str(max_corr)]);
 end
 
-figure;
-subplot(2,2,1);
-plot(f1);
-subplot(2,2,2);
-plot(b1);
-subplot(2,2,3);
-plot(b2);
-subplot(2,2,4);
-plot(b3);
+for i=1:8
+    subplot(2,2,i);
+    plot(F)
