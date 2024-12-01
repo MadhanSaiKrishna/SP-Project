@@ -1,8 +1,8 @@
 % Load the ECG signal E1
-% load('E1.mat'); 
+load('E1.mat'); 
 fs = 128; % Sampling rate in Hz
 time = (0:length(E1)-1) / fs; % Time vector
-
+E1 = E1(5000:5500);
 % Step 1: Detect R-peaks
 [~, locs_R] = findpeaks(E1, 'MinPeakHeight', 0.5, 'MinPeakDistance', 0.6 * fs);
 

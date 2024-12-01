@@ -62,4 +62,4 @@ else
 end
 
 figure;
-plot(fftshift(abs(fft(E1))));
+plot(fs*(-length(E1)/2:(length(E1)-1)/2)/length(E1),fftshift(abs(fft(E1))));

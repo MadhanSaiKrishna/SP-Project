@@ -1,7 +1,7 @@
 close all;
 load('E2.mat'); 
 fs = 128;
-E2 = E2(1:500);
+% E2 = E2(1:500);
 
 fc_low = 40; % Lowpass cutoff frequency in Hz
 fc_high = 0.5; % Highpass cutoff frequency in Hz
@@ -91,5 +91,4 @@ else
 end
 
 figure;
-plot(fs * ((-length(E2)/2 : (length(E2)-1)/2) / length(E2)), fftshift(abs(fft(E2))));
-
+plot(fs*(-length(E2)/2:(length(E2)-1))/2)/length(E2),fftshift(abs(fft(E2)));
