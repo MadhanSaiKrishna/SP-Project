@@ -1,7 +1,7 @@
 % E1=abs(E1).^2;
 load('E1.mat'); 
 fs=128;
-E1=E1(5000:5500);
+% E1=E1(5000:5500);
 
 ECG_diff = diff(E1);
 ECG_squared = ECG_diff .^ 2;
@@ -23,7 +23,7 @@ HR_time = time1(locs(2:end));
 figure;
 subplot(2,1,1);
 % plot(time1,E1);
-plot(fftshift(abs(fft(E1))))
+plot(E1)
 % hold on;
 % plot(time2,ECG_ma);
 % hold off;
