@@ -1,3 +1,6 @@
+clear;
+clc
+
 [b1,fs_b1] = audioread("Reference\bird1.wav");
 [b2,fs_b2] = audioread("Reference\bird2.wav");
 [b3,fs_b3] = audioread("Reference\bird3.wav");
@@ -128,7 +131,7 @@ disp(['F2 and B3 ',num2str(f2b3)]);
 % else
 %     sc_f1 = 0;
 % end
-% 
+% % 
 % if sum(mag_b1)>0
 %     sc_b1 = sum((freq_b1).*(mag_b1)')/sum(freq_b1);
 % else
@@ -146,3 +149,12 @@ disp(['F2 and B3 ',num2str(f2b3)]);
 % else
 %     sc_b3 = 0;
 % end
+
+%Matched filter
+
+% m1filter = flipud(b3(:));
+% th1 = 0.9*(b3'*b3);
+% o1 = filter(m1filter,1,f1);
+% 
+% y = find(o1>th1);
+

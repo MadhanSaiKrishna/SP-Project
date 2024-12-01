@@ -1,4 +1,5 @@
 clear;
+clc;
 [a1,fs_a1] = audioread("audios\1.wav");
 La1 = length(a1);
 
@@ -13,4 +14,3 @@ louder_samples = find(a1>threshold);
 louder_times = louder_samples/fs_a1;
 
 a1_wow = a1(20950:48209);
-
