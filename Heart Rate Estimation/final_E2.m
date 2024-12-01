@@ -23,7 +23,7 @@ time2 = (0:length(E2)-2) / fs;
 window_size = round(0.12 * fs); 
 ECG_ma = movmean(ECG_squared, window_size);
 threshold = 0.6 * max(ECG_ma); % 60% of the maximum value
-[peaks, locs] = findpeaks(ECG_ma, 'MinPeakHeight', threshold, 'MinPeakDistance', round(0.2 * fs));
+[peaks, locs] = findpeaks(ECG_ma, 'MinPeakHeight', threshold, 'MinPeakDistance', round(0.5 * fs));
 
 RR_intervals = diff(locs) / fs; 
 HR = 60 ./ RR_intervals;

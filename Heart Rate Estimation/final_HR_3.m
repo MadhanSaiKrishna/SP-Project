@@ -14,7 +14,7 @@ window_size = round(0.12 * fs);
 ECG_ma = movmean(ECG_squared, window_size);
 
 threshold = 0.6 * max(ECG_ma); % 60% of the maximum value
-[peaks, locs] = findpeaks(ECG_ma, 'MinPeakHeight', threshold, 'MinPeakDistance', round(0.2 * fs));
+[peaks, locs] = findpeaks(ECG_ma, 'MinPeakHeight', threshold, 'MinPeakDistance', round(0.5* fs));
 
 RR_intervals = diff(locs) / fs; 
 HR = 60 ./ RR_intervals;
@@ -24,14 +24,18 @@ figure;
 subplot(2,1,1);
 % plot(time1,E1);
 plot(E1)
-% hold on;
+hold on;
+plot(ECG_ma);
 % plot(time2,ECG_ma);
 % hold off;
 xlabel("time");
 ylabel("ECG signal");
 
 subplot(2,1,2);
-plot(HR);
-xlabel("time");
-ylabel("heart rate");
+% plot(ECG_ma);
+% xlabel("time");
+% ylabel("heart rate");
+
+% figure;
+plot(HR_time,HR);
 
