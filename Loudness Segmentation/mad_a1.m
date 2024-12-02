@@ -68,7 +68,7 @@ a1_wow_rms = sqrt(mean(a1(20950:48209).^2));
 a1_i_rms = sqrt(mean(a1(48350:57180).^2));
 a1_won_rms= sqrt(mean(a1(57180:68550).^2));
 a1_it_rms = sqrt(mean(a1(68550:86970).^2));
-
+    
 % disp('RMS values of the segments :')
 % disp(['Wow :',num2str(a1_wow_rms)]);
 % disp(['i :',num2str(a1_i_rms)]);
