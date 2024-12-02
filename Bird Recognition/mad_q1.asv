@@ -120,41 +120,27 @@ f2b1 = xcorr(abs(fft_f2),abs(fft_b1),0,'coeff');
 f2b2 = xcorr(abs(fft_f2),abs(fft_b2),0,'coeff');
 f2b3 = xcorr(abs(fft_f2),abs(fft_b3),0,'coeff');
 
-disp(['F2 and B1 ',num2str(f2b1)]);
-disp(['F2 and B2 ',num2str(f2b2)]);
-disp(['F2 and B3 ',num2str(f2b3)]);
+%Correlation of Time
+figure;
+subplot(3,1,1);
+[corr_f1_b1, lags] = xcorr(f1, b1, 'coeff');
+plot(lags,corr_f1_b1)
+grid on;
+title('Correlation of F1,B1 in Time')
+xlea
 
-%Spectral Centroids
+subplot(3,1,2);
+[corr_f1_b2, lags] = xcorr(f1,b2, 'coeff');
+plot(lags,corr_f1_b2)
+grid on;
+title('Correlation of F1,B2 in Time')
 
-% if sum(mag_f1)>0
-%     sc_f1 = sum(freq_f1.*(mag_f1)')/sum(freq_f1);
-% else
-%     sc_f1 = 0;
-% end
-% % 
-% if sum(mag_b1)>0
-%     sc_b1 = sum((freq_b1).*(mag_b1)')/sum(freq_b1);
-% else
-%     sc_b1 = 0;
-% end
-% 
-% if sum(mag_b2)>0
-%     sc_b2 = sum((freq_b2).*(mag_b2)')/sum(freq_b2);
-% else
-%     sc_b2 = 0;
-% end
-% 
-% if sum(mag_b3)>0
-%     sc_b3 = sum((freq_b3).*(mag_b3)')/sum(freq_b3);
-% else
-%     sc_b3 = 0;
-% end
+subplot(3,1,3);
+[corr_f1_b3, lags] = xcorr(f1,b3, 'coeff');
+plot(lags,corr_f1_b3)
+grid on;
+title('Correlation of F1,B3 in Time')
 
-%Matched filter
-
-% m1filter = flipud(b3(:));
-% th1 = 0.9*(b3'*b3);
-% o1 = filter(m1filter,1,f1);
-% 
-% y = find(o1>th1);
-
+disp(['Max. of Correlation with F1 ',num2str(max(corr_f1_b1))])
+disp(['Max. of Correlation with F2 ', num2str(max(corr_f1_b2))])
+disp(['Max. of Correlation with F3 ', num2str(max(corr_f1_b3))])
