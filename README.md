@@ -1,3 +1,6 @@
+Project Completion Status:
+Bird Recognition & Heart Rate estimation were decently done
+Loudness segmentation, Task 2 is not done 
 
 ## Signal Processing Project (Monsoon 2024) 
 
